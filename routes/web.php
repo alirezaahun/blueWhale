@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\WorkSampleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,6 @@ Route::get('/', function () {
 
 Route::prefix('adminpanel_management')->name('admin.')->group(function(){
     Route::resource('/blogs', BlogController::class);
+    Route::resource('/works' , WorkSampleController::class);
+    Route::delete('/deleteImage/{id}' , [WorkSampleController::class , 'destroyImage'])->name('works.destroyImage');
 });

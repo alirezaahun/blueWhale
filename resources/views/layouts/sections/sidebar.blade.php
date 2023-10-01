@@ -12,16 +12,16 @@
           <svg class="nav-icon">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
           </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-      <li class="nav-title">Theme</li>
-      <li class="nav-item"><a class="nav-link" href="colors.html">
+      <li class="nav-title">Pages</li>
+      <li class="nav-item"><a class="nav-link" href="{{route('admin.blogs.index')}}">
           <svg class="nav-icon">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
-          </svg> Colors</a></li>
-      <li class="nav-item"><a class="nav-link" href="typography.html">
-          <svg class="nav-icon">
-            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-          </svg> Typography</a></li>
-      <li class="nav-title">Components</li>
+          </svg> Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{route('admin.works.index')}}">
+            <svg class="nav-icon">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
+            </svg> Works</a></li>
+      {{-- <li class="nav-title">Components</li>
       <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
           <svg class="nav-icon">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
@@ -127,12 +127,12 @@
           <svg class="nav-icon">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-description"></use>
           </svg> Docs</a></li>
-      <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
-          <svg class="nav-icon">
+      <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top"> --}}
+          {{-- <svg class="nav-icon">
             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-layers"></use>
           </svg> Try CoreUI
           <div class="fw-semibold">PRO</div>
-        </a></li>
+        </a></li> --}}
     </ul>
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
   </div>
