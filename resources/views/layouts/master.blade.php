@@ -35,6 +35,7 @@
     @include('layouts.sections.sidebar')
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
     @include('layouts.sections.header')
+    @include('layouts.sections.errors')
     @yield('content')
     @include('layouts.sections.footer')
     </div>

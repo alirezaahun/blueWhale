@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class BlogController extends Controller
 {
