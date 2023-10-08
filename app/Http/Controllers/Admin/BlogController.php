@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +25,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('pages.blog.create');
+        $categories = Category::all();
+        return view('pages.blog.create' , compact('categories'));
     }
 
     /**
@@ -46,7 +48,8 @@ class BlogController extends Controller
         ]);
 
         $this->FileHandler($request->file('file'), "App\Models\Blog" , $blog->id);
-        return route('admin.blogs.index');
+        $blog->category()->attach($request->category);
+        return redirect()->route('admin.blogs.index');
 
     }
 
@@ -63,7 +66,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('pages.blog.edit' , compact('blog'));
+        $categories = Category::all();
+        $BlogCategories = $blog->category()->pluck('id')->toArray();
+        return view('pages.blog.edit' , compact('blog' , 'categories' , 'BlogCategories'));
     }
 
     /**
@@ -85,6 +90,8 @@ class BlogController extends Controller
             $blog->file()->delete();
             $this->FileHandler($request->file , "App\Models\Blog" , $blog->id);
         }
+
+        $blog->category()->sync($request->category);
 
         return redirect()->route('admin.blogs.index');
     }

@@ -13,3 +13,4 @@ import '../assets/@coreui/chartjs/js/coreui-chartjs';
 // import '../assets/@coreui/utils/js/coreui-utils';
 import '../assets/main';
 import '../assets/tinymce';
+import '../assets/multiple-select';

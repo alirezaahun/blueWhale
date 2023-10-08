@@ -13,4 +13,8 @@ class Blog extends Model
     public function file(){
         return $this->morphOne(File::class , 'fileable');
     }
+
+    public function category(){
+        return $this->belongsToMany(Category::class);
+    }
 }

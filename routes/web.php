@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\WorkSampleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
@@ -44,4 +45,5 @@ Route::prefix('adminpanel_management')->name('admin.')->middleware('auth')->grou
     Route::resource('/blogs', BlogController::class);
     Route::resource('/works' , WorkSampleController::class);
     Route::delete('/deleteImage/{id}' , [WorkSampleController::class , 'destroyImage'])->name('works.destroyImage');
+    Route::post('/createCategory' , [CategoryController::class , 'create'])->name('categoryCreate');
 });
